@@ -24,23 +24,23 @@ public class DriveWithJoystick extends Command {
 
     protected void execute() {
     	input = Robot.oi.getJoyY();
-    	if (input < 0){
-    		backwards = true;
-    	}
-    	if (input > (speed + maxChange)){
-    		speed = speed + maxChange;
-    	}else if(input < speed - maxChangeBack){
-    		speed = speed - maxChangeBack;
-//    	}else if(-input > (speed + maxChangeBack) && backwards == true){
-//    		speed = speed + maxChangeBack;
-//    	}else if(-input < (speed - maxChangeBack) && backwards == true){
+//    	if (input < 0){
+//    		backwards = true;
+//    	}
+//    	if (input > (speed + maxChange)){
+//    		speed = speed + maxChange;
+//    	}else if(input < speed - maxChangeBack){
 //    		speed = speed - maxChangeBack;
-    	}else{
-    		speed = input;
-    	}
+////    	}else if(-input > (speed + maxChangeBack) && backwards == true){
+////    		speed = speed + maxChangeBack;
+////    	}else if(-input < (speed - maxChangeBack) && backwards == true){
+////    		speed = speed - maxChangeBack;
+//    	}else{
+//    		speed = input;
+//    	}
     	
     	// NOTE ONLY FOR OUR ROBOT
-    	Robot.drivetrain.arcadeDrive(speed, -Robot.oi.getJoyX());
+    	Robot.drivetrain.arcadeDrive(input, -Robot.oi.getJoyX());
     	//Robot.drivetrain.arcadeDrive(Robot.oi.getJoyY(), -Robot.oi.getJoyX());
     	
     }

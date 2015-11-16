@@ -19,30 +19,20 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class DriveTrain extends Subsystem {
 
-    /*SpeedController declaration*/
-    private SpeedController fleftcim, 
-    			      		frightcim, 
-    			      		bleftcim, 
-    			      		brightcim;
-    			      
+	/* SpeedController declaration */
+	private SpeedController fleftcim, frightcim, bleftcim, brightcim;
 
-    /*Encoder declaration*/
-    private Encoder           leftDriveEncoder,
-    			      rightDriveEncoder;
-    /*Gyro declaration*/
-    private Gyro              gyro;
-    
-    /*RobotDrive declaration*/
-    private RobotDrive drive;
-    
+	/* Encoder declaration */
+	private Encoder leftDriveEncoder, rightDriveEncoder;
+	/* Gyro declaration */
+	private Gyro gyro;
+
+	/* RobotDrive declaration */
+	private RobotDrive drive;
+
     	public DriveTrain(){
     		
-    		
 	    	//-------  motor initialization ---------- //
-    		//
-    		//
-    		//
-    		//
 	    	fleftcim   = new Victor(0);  //3
     		frightcim  = new Victor(1); //1
     		bleftcim   = new Victor(2);  //2
@@ -108,43 +98,10 @@ public class DriveTrain extends Subsystem {
     		bleftcim.set(output);
     		brightcim.set(output);
     }
-    	
-//        public void driveStraight(double speed){
-//        	double leftRate = getleftRate();
-//        	double rightRate = getrightRate();
-//        	double error = leftRate - rightRate;
-//        	double leftpow = speed;
-//        	double rightpow = speed;
-//        	    	
-//        		if (error > 0){
-//        			while(error >= 3 && error < 30)
-//        		{
-//        				if((leftpow - 0.01) < 0 || (rightpow + 0.01) > 1)
-//        					break;
-//        	    	leftpow -= 0.01;
-//        	    	rightpow += 0.01;
-//        			error = leftRate - rightRate;
-//        	   	}
-//        			tankDrive(leftpow, rightpow);
-//        	    }else if (error < 0){
-//        	    	while(error <= -3 && error > -30)
-//        		{
-//        	    		if((leftpow + 0.01) > 1 || (rightpow - 0.01) < 0)
-//        					break;
-//        	    	leftpow += 0.01;
-//        	    	rightpow -= 0.01;
-//        	    	error = leftRate - rightRate;
-//        	   	}
-//        	    	tankDrive(leftpow, rightpow);
-//        	    }else{
-//        	    	tankDrive(leftpow, rightpow);
-//        	    }
-//        }   
-//    
     
     /*Getters*/
     
-    	public double getHeading(){
+    public double getHeading(){
     		return gyro.getAngle();
     }
         
@@ -184,10 +141,10 @@ public class DriveTrain extends Subsystem {
     	double rightpow, leftpow;
     	double angle = gyro.getAngle();
     	double kP = 0.02;
-    	if(5 < angle){
+    	if(2 < angle){
     		rightpow =  _speed - kP * angle;
     		tankDrive(rightpow, _speed);
-    	}else if(-5 > angle){
+    	}else if(-2 > angle){
     		leftpow =  _speed + kP * angle;
     		tankDrive(_speed, leftpow);
     	}else{

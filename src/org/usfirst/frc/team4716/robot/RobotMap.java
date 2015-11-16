@@ -20,10 +20,10 @@ public class RobotMap {
 	
 	// ***** DIO ***** //
 	
-	public static int 	ELEVATOR_ENCODER_PORT_1 = 4,
-						ELEVATOR_ENCDER_PORT_2 = 5,
-						LEFT_DRIVE_ENCODER_PORT_1 = 0,
-						LEFT_DRIVE_ENCDER_PORT_2 = 1,
+	public static int 	ELEVATOR_ENCODER_PORT_1 = 0,
+						ELEVATOR_ENCDER_PORT_2 = 1,
+						LEFT_DRIVE_ENCODER_PORT_1 = 4,
+						LEFT_DRIVE_ENCDER_PORT_2 = 5,
 						RIGHT_DRIVE_ENCODER_PORT_1 = 2,
 						RIGHT_DRIVE_ENCDER_PORT_2 = 3;
 	
@@ -128,7 +128,7 @@ public class RobotMap {
     
     
    // Motor Factor
-    public static double mFactor = 0.9;
+    public static double mFactor = 0.75;
     
     
     

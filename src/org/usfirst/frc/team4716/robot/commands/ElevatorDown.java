@@ -20,7 +20,7 @@ public class ElevatorDown extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	if(Robot.elevator.limitGet() == false){
+    	if(Robot.elevator.limitGet() == false && Robot.elevator.getEncoderDistance() >= dist){
     	Robot.elevator.moveElevCIM(speed);
     	System.out.println("Elevator Going Up");
     	}

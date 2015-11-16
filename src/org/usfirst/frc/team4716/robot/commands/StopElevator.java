@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class StopElevator extends Command {
 
     public StopElevator() {
-    	//requires(Robot.elevator);
+    	requires(Robot.elevator);
     }
 
     protected void initialize() {

@@ -9,10 +9,10 @@ public class ElevatorLiftProcess extends CommandGroup {
     
     public  ElevatorLiftProcess() {
     	addParallel(new HoldSystemRelease());
-    	addSequential(new ElevatorUp(-0.9,580));
+    	addSequential(new ElevatorUp(-0.9,4200));
     	//addSequential(new Wait(1.0));
     	addSequential(new HoldSystemLock());
-    	addSequential(new ElevatorDown(0.9,10));
+    	addSequential(new ElevatorDown(0.75,10));
     	//addSequential(new StopElevator());
     	
         // Add Commands here:

@@ -37,7 +37,6 @@ public class Robot extends IterativeRobot {
 	public static final Elevator elevator = new Elevator();
 	public static final Lift lift = new Lift();
 	public static final HoldSystem holdsystem = new HoldSystem();
-	//public static final PIDElevator pidelevator = new PIDElevator();
 	public static OI oi;
 	public NIVision.Rect rect;
 
